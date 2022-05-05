@@ -1,0 +1,28 @@
+<html>
+    <head>
+        <title>PG2 Tradicional</title>
+    </head>
+    <body>
+        <h1>Página 2</h1>
+        <p>
+            Conteúdo da página 2.
+        </p>
+        <div id="stage"></div>
+        <div>
+            <p><a href="pg1.html">Link para página 1.</a></p>
+            <p><a href="index.html">Home</a></p>
+        </div>
+        <script>
+            var url_string = window.location.href
+            var url = new URL(url_string);
+            var campo1 = url.searchParams.get("nome");
+            var campo2 = url.searchParams.get("sobrenome");
+            if(campo1){
+                document.getElementById("stage").innerText += "Olá " + campo1;
+                if(campo2){
+                    document.getElementById("stage").innerText += " " + campo2;
+                }
+            }
+        </script>
+    </body>
+</html>
